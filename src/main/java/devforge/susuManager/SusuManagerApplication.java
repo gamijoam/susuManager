@@ -1,5 +1,7 @@
 package devforge.susuManager;
 
+import devforge.susuManager.presentacion.indexFx;
+import javafx.application.Application;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SusuManagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SusuManagerApplication.class, args);
+		Application.launch(indexFx.class,args);
 	}
 
 }
