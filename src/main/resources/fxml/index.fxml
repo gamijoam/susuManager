@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="devforge.susuManager.controladores.indexControlador"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../css/styleIndex.css" fx:controller="devforge.susuManager.controladores.IndexControlador">
+    <top>
+        <!-- Barra superior con título -->
+        <HBox alignment="CENTER" style="-fx-background-color: #4CAF50; -fx-padding: 10;" >
+            <Label style="-fx-font-size: 24px; -fx-text-fill: white;" text="SUSU Manager" />
+        </HBox>
+    </top>
 
-</AnchorPane>
+    <center>
+        <!-- Contenido central -->
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <Text style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Bienvenido al Sistema de Gestión de Susus" />
+            <Separator />
+
+            <!-- Botones principales -->
+            <Button onAction="#openUserManagement" styleClass="menu-button" text="Gestionar Usuarios" />
+            <Button onAction="#openSusuManagement" styleClass="menu-button" text="Gestionar Susus" />
+            <Button onAction="#openPaymentRegistration" styleClass="menu-button" text="Registrar Pagos" />
+            <Button onAction="#openReports" styleClass="menu-button" text="Ver Reportes" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <!-- Pie de página -->
+        <HBox alignment="CENTER" style="-fx-background-color: #333; -fx-padding: 10;">
+            <Label style="-fx-text-fill: white;" text="© 2025 SUSU Manager. Todos los derechos reservados." />
+        </HBox>
+    </bottom>
+</BorderPane>

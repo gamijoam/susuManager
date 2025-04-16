@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../css/stylesRegistrarpagos.css" fx:controller="devforge.susuManager.controladores.RegistrarPagos" spacing="20" style="-fx-padding: 20;">
+    <!-- Barra superior con título -->
+    <HBox style="-fx-background-color: #4CAF50; -fx-padding: 10;" alignment="CENTER">
+        <Label text="Registro de Pagos" style="-fx-font-size: 24px; -fx-text-fill: white;" />
+    </HBox>
+
+    <!-- Tabla de pagos -->
+    <TableView fx:id="paymentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" prefWidth="50" fx:id="idColumn" />
+            <TableColumn text="Usuario" prefWidth="200" fx:id="userColumn" />
+            <TableColumn text="Susu" prefWidth="200" fx:id="susuColumn" />
+            <TableColumn text="Monto" prefWidth="150" fx:id="amountColumn" />
+            <TableColumn text="Fecha de Pago" prefWidth="150" fx:id="paymentDateColumn" />
+        </columns>
+    </TableView>
+
+    <!-- Formulario para registrar pagos -->
+    <GridPane hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 10;">
+        <Label text="Usuario:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="userComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Susu:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="susuComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Monto:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <TextField fx:id="amountField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Fecha de Pago:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <DatePicker fx:id="paymentDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <!-- Botones de acción -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Registrar Pago" onAction="#addPayment" styleClass="action-button" />
+        <Button text="Editar Pago" onAction="#editPayment" styleClass="action-button" />
+        <Button text="Eliminar Pago" onAction="#deletePayment" styleClass="action-button" />
+    </HBox>
+</VBox>
