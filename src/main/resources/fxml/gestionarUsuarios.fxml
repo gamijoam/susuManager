@@ -12,7 +12,7 @@
     </HBox>
 
     <!-- Tabla de usuarios -->
-    <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
+    <TableView fx:id="userTable" VBox.vgrow="ALWAYS" >
         <columns>
             <TableColumn text="ID" prefWidth="50" fx:id="idColumn" />
             <TableColumn text="Nombre" prefWidth="200" fx:id="nameColumn" />

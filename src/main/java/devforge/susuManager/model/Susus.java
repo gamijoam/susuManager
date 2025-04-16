@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Susus {
     private Integer idSusu;
     private String nombreSusu;
     private Double montoFijo;
-    private Date fechaInicio;
+    private LocalDate fechaInicio;
     private String frecuencia;
 
     //Relacion uno a muchos pagos
