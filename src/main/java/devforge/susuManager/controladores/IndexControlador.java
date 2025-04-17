@@ -1,10 +1,13 @@
 package devforge.susuManager.controladores;
 
 import devforge.susuManager.SusuManagerApplication;
+import devforge.susuManager.model.Pagos;
+import devforge.susuManager.servicios.PagosServicios;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
@@ -39,6 +42,10 @@ public class IndexControlador {
         Stage stage = new Stage();
         loader.setControllerFactory(context::getBean);
         Scene escena = new Scene(loader.load());
+        Pagos pagos = new Pagos();
+        // Inicializar la colección de tareas
+        Hibernate.initialize(pagos);
+
         stage.setScene(escena);
         stage.show();
     }

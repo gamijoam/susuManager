@@ -15,12 +15,12 @@
     <center>
         <!-- Contenido central -->
         <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
-            <Text style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Bienvenido al Sistema de Gestión de Susus" />
+            <Text style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Bienvenido al Sistema de Gestión de Susu" />
             <Separator />
 
             <!-- Botones principales -->
             <Button onAction="#openUserManagement" styleClass="menu-button" text="Gestionar Usuarios" />
-            <Button onAction="#openSusuManagement" styleClass="menu-button" text="Gestionar Susus" />
+            <Button onAction="#openSusuManagement" styleClass="menu-button" text="Gestionar Susu" />
             <Button onAction="#openPaymentRegistration" styleClass="menu-button" text="Registrar Pagos" />
             <Button onAction="#openReports" styleClass="menu-button" text="Ver Reportes" />
         </VBox>

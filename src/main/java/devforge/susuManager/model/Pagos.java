@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,7 +21,7 @@ public class Pagos {
     private Integer usuarioId; // (FK) al usuario que pago
     private Integer susuId; // (FK) del susu al que pertenece el pago
     private Integer monto;
-    private Date fechaPago;
+    private LocalDate fechaPago;
 
     //Relacion muchos a uno con Usuario
     @ManyToOne
@@ -41,4 +42,5 @@ public class Pagos {
     * -----Tarea----
     * Colocar las (FK)
     * */
+
 }
