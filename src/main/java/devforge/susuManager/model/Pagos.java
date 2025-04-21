@@ -13,7 +13,6 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class Pagos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

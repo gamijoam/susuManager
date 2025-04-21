@@ -5,6 +5,7 @@ import devforge.susuManager.model.Pagos;
 import devforge.susuManager.servicios.PagosServicios;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.hibernate.Hibernate;
@@ -59,4 +60,17 @@ public class IndexControlador {
         stage.show();
     }
 
+    public void openAsociarUsuario(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/asociarUsuarioASusu.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Asociar Usuario a Susu");
+            loader.setControllerFactory(context::getBean);
+            Scene escena = new Scene(loader.load());
+            stage.setScene(escena);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

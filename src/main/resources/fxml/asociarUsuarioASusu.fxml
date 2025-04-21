@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../css/styleAsociar.css" fx:controller="devforge.susuManager.controladores.AsociarUsuarioASusuControlador" spacing="20" style="-fx-padding: 20;">
+    <!-- Título -->
+    <Label text="Asociar Usuario a Susu" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <!-- Formulario -->
+    <GridPane hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 10;">
+        <!-- Selector de Usuario -->
+        <Label text="Usuario:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="usuarioComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <!-- Selector de Susu -->
+        <Label text="Susu:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="susuComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <!-- Botón para confirmar la asociación -->
+    <HBox alignment="CENTER">
+        <Button text="Asociar" onAction="#asociarUsuario" styleClass="action-button" />
+    </HBox>
+</VBox>

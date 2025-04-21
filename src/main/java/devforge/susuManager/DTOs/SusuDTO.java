@@ -14,6 +14,10 @@ import lombok.ToString;
 public class SusuDTO {
     private String nombre;
     private Susus susus;
+
+    public SusuDTO(Integer idSusu, String nombreSusu) {
+    }
+
     @Override
     public String toString() {
         return nombre; // Solo muestra el nombre en el ComboBox

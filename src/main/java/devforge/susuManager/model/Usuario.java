@@ -10,7 +10,6 @@ import java.util.List;
 
 @Entity
 @Data
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class Usuario {
@@ -28,6 +27,16 @@ public class Usuario {
     //Relacion uno a muchos con turnos
     @OneToMany(mappedBy = "usuarioTurno", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Turnos> turnos;
+
+    // Relación muchos a muchos con susus
+    @ManyToMany
+    @JoinTable(
+            name = "usuario_susu", // Nombre de la tabla intermedia
+            joinColumns = @JoinColumn(name = "idUsuario"), // Columna que referencia al usuario
+            inverseJoinColumns = @JoinColumn(name = "idSusu") // Columna que referencia al susu
+    )
+    private List<Susus> susus;
+
     /*
     * Esta entidad es para la tabla Usuarios en la bd
     * */

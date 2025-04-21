@@ -14,7 +14,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class Susus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +31,9 @@ public class Susus {
     @OneToMany(mappedBy = "susuTurnos", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Turnos> turno;
 
+    // Relación muchos a muchos con usuarios
+    @ManyToMany(mappedBy = "susus")
+    private List<Usuario> usuarios;
     /*
     * Esta entidad es para la tabla Susus en la bd
     * */

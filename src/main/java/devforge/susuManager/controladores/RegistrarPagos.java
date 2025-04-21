@@ -37,7 +37,6 @@ public class RegistrarPagos implements Initializable {
     @FXML private ComboBox susuComboBox;
     @FXML private TextField amountField;
     @FXML private DatePicker paymentDatePicker;
-
     private ObservableList<UsuarioDTO> listaUsuarios = FXCollections.observableArrayList();
     private ObservableList<SusuDTO> listaSusu = FXCollections.observableArrayList();
     private ObservableList<Pagos> listaPagos = FXCollections.observableArrayList();
@@ -51,16 +50,22 @@ public class RegistrarPagos implements Initializable {
 
     }
     public void addPayment(ActionEvent actionEvent) {
-        Pagos pagos = new Pagos();
-        pagos.setUsuarioId(probar().getIdUsuario());
-        pagos.setSusuId(probar1().getIdSusu());
-        pagos.setUsuario(probar());
-        pagos.setSusuPagos(probar1());
-        pagos.setMonto(Integer.parseInt(amountField.getText()));
-        pagos.setFechaPago(paymentDatePicker.getValue());
-        pagosServicios.agregarPago(pagos);
-        listarPagos();
-        limpiarCampos();
+        try{
+            Pagos pagos = new Pagos();
+            pagos.setUsuarioId(probar().getIdUsuario());
+            pagos.setSusuId(probar1().getIdSusu());
+            pagos.setUsuario(probar());
+            pagos.setSusuPagos(probar1());
+            pagos.setMonto(Integer.parseInt(amountField.getText()));
+            pagos.setFechaPago(paymentDatePicker.getValue());
+            pagosServicios.agregarPago(pagos);
+            listarPagos();
+            limpiarCampos();
+
+        }catch (RuntimeException e) {
+            // Manejar errores
+            showAlert("Error", e.getMessage());
+        }
     }
     public void editPayment(ActionEvent actionEvent) {
         Pagos pagos = paymentTable.getSelectionModel().getSelectedItem();
@@ -157,6 +162,13 @@ public class RegistrarPagos implements Initializable {
         susuComboBox.setValue(null);
         amountField.clear();
         paymentDatePicker.setValue(null);
+    }
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

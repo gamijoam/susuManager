@@ -23,6 +23,7 @@
             <Button onAction="#openSusuManagement" styleClass="menu-button" text="Gestionar Susu" />
             <Button onAction="#openPaymentRegistration" styleClass="menu-button" text="Registrar Pagos" />
             <Button onAction="#openReports" styleClass="menu-button" text="Ver Reportes" />
+            <Button onAction="#openAsociarUsuario" styleClass="menu-button" text="Asociar Usuario a Susu" />
         </VBox>
     </center>
 

@@ -78,7 +78,7 @@ public class GestionarSusus implements Initializable {
         Susus susus = susuTable.getSelectionModel().getSelectedItem();
         sususServicios.eliminarSusu(susus);
         listarCeldas();
-        listarCeldas();
+        limpiarCampos();
     }
 
     private void limpiarCampos(){
@@ -96,7 +96,7 @@ public class GestionarSusus implements Initializable {
     }
     private void listarCeldas(){
         sususList.clear();
-        sususList.addAll(sususServicios.listaSusus());
+        sususList.addAll(sususServicios.listarSusus());
         susuTable.setItems(sususList);
     }
     private void Click(){
